@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './online/index.css';
-import App from './online/App';
 import reportWebVitals from './online/reportWebVitals';
+import Playground from "./share/playground"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div style={{
+      background: '#a0a0b0',
+      height: '100vh',
+      width: '100vw',
+    }} >
+      <Playground address={null} />
+    </div>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('base')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -10,7 +10,6 @@
     "local:make": "electron-forge make",
     "local:publish": "electron-forge publish",
     "local:lint": "eslint --ext .ts,.tsx .",
-
     "go:online": "react-scripts start",
     "online:build": "react-scripts build",
     "online:test": "react-scripts test",
@@ -113,6 +112,15 @@
     "web-vitals": "^2.1.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@codemirror/basic-setup": "^0.19.1",
+    "@codemirror/commands": "^0.19.6",
+    "@codemirror/gutter": "^0.19.9",
+    "@codemirror/lang-javascript": "^0.19.3",
+    "@codemirror/view": "^0.19.37",
+    "electron-squirrel-startup": "^1.0.0",
+    "prosemirror-model": "^1.15.0",
+    "prosemirror-schema-basic": "^1.1.2",
+    "prosemirror-state": "^1.3.4",
+    "prosemirror-view": "^1.23.4"
   }
 }
