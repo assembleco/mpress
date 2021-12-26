@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import { observer } from "mobx-react"
 
 import { keymap } from "@codemirror/view"
@@ -11,7 +10,7 @@ import { schema } from "prosemirror-schema-basic"
 import { CodeModel, CodeDisplay } from "./code"
 import { ProseModel, ProseDisplay } from "./prose"
 import { Node } from "prosemirror-model"
-import { DOMParser, parseHTML } from "linkedom"
+import { parseHTML } from "linkedom"
 
 class Playground extends React.Component {
   state = {
@@ -124,7 +123,6 @@ class Playground extends React.Component {
 
       if(this.playgroundDisplay)
       this.playgroundDisplay.dispatch(change)
-    } else {
     }
   }
 
