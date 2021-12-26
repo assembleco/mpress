@@ -5,7 +5,7 @@
   "description": "A legal coding program",
   "main": ".webpack/main",
   "scripts": {
-    "go:local": "electron-forge start",
+    "go:local": "NODE_ENV=development electron-forge start",
     "local:package": "electron-forge package",
     "local:make": "electron-forge make",
     "local:publish": "electron-forge publish",
@@ -73,7 +73,7 @@
               "entryPoints": [
                 {
                   "html": "./src/index.html",
-                  "js": "./src/renderer.ts",
+                  "js": "./src/renderer.tsx",
                   "name": "main_window"
                 }
               ]
@@ -93,6 +93,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "@vercel/webpack-asset-relocator-loader": "1.7.0",
@@ -123,7 +125,9 @@
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
     "bfj": "^7.0.2",
+    "browserify-zlib": "^0.2.0",
     "browserslist": "^4.18.1",
+    "buffer": "^6.0.3",
     "camelcase": "^6.2.1",
     "canvas": "^2.8.0",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
@@ -138,6 +142,7 @@
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "https-browserify": "^1.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
@@ -146,11 +151,14 @@
     "mini-css-extract-plugin": "^2.4.5",
     "mobx": "^6.3.10",
     "mobx-react": "^7.2.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.0.1",
+    "process": "^0.11.10",
     "prompts": "^2.4.2",
     "prosemirror-model": "^1.15.0",
     "prosemirror-schema-basic": "^1.1.2",
@@ -165,6 +173,8 @@
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.3",
     "tailwindcss": "^3.0.2",

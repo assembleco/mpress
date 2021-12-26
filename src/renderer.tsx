@@ -26,6 +26,15 @@
  * ```
  */
 
-import './index.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Playground from "./share/playground.jsx"
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+ReactDOM.render(
+  <React.StrictMode>
+    <div style={{ background: '#a0a0b0', height: '100vh', width: '100vw' }} >
+      <Playground address={null} />
+    </div>
+  </React.StrictMode>,
+  document.getElementById('base')
+);

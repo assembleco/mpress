@@ -17,6 +17,11 @@ module.exports = [
     },
   },
   {
+    test: /\.jsx?$/,
+    loader: "babel-loader",
+    exclude: [/node_modules/, /public/],
+  },
+  {
     test: /\.tsx?$/,
     exclude: /(node_modules|\.webpack)/,
     use: {
@@ -25,5 +30,11 @@ module.exports = [
         transpileOnly: true
       }
     }
+  },
+
+  // XML legislative sources
+  {
+    test: /\.xml$/,
+    use: 'raw-loader'
   },
 ];

@@ -12,6 +12,21 @@ module.exports = {
   },
   plugins: plugins,
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css']
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
+
+    fallback: {
+      "path": require.resolve('path-browserify'),
+      "https": require.resolve("https-browserify"),
+      "http": require.resolve("stream-http"),
+      "stream": require.resolve("stream-browserify"),
+      "zlib": require.resolve("browserify-zlib"),
+      "os": require.resolve("os-browserify"),
+      "process": require.resolve("process/browser"),
+      "buffer": require.resolve("buffer/"),
+      "canvas": require.resolve("canvas"),
+      "perf_hooks": false,
+      "fs": false,
+      "child_process": false,
+    }
   },
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './online/reportWebVitals';
-import Playground from "./share/playground"
+import Playground from "./share/playground.jsx"
 
 ReactDOM.render(
   <React.StrictMode>
