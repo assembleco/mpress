@@ -1,22 +1,45 @@
 {
   "name": "mpress",
   "productName": "mpress",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "version": "base-0",
+  "description": "A legal coding program",
   "main": ".webpack/main",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
+    "go:local": "electron-forge start",
+    "local:package": "electron-forge package",
+    "local:make": "electron-forge make",
+    "local:publish": "electron-forge publish",
+    "local:lint": "eslint --ext .ts,.tsx .",
+
+    "go:online": "react-scripts start",
+    "online:build": "react-scripts build",
+    "online:test": "react-scripts test",
+    "online:eject": "react-scripts eject"
   },
   "keywords": [],
   "author": {
     "name": "grace",
     "email": "grace.c.youngblood@gmail.com"
   },
-  "license": "MIT",
+  "license": "public domain",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "config": {
     "forge": {
       "packagerConfig": {},
@@ -69,6 +92,9 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
     "@electron-forge/plugin-webpack": "6.0.0-beta.61",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "@vercel/webpack-asset-relocator-loader": "1.7.0",
@@ -78,9 +104,13 @@
     "eslint-plugin-import": "^2.20.0",
     "fork-ts-checker-webpack-plugin": "^6.0.1",
     "node-loader": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.2.2",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "web-vitals": "^2.1.0"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
