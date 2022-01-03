@@ -5,7 +5,7 @@
   "description": "A legal coding program",
   "main": ".webpack/main",
   "scripts": {
-    "go:local": "NODE_ENV=development electron-forge start",
+    "go:local": "env NODE_ENV=development electron-forge start",
     "local:package": "electron-forge package",
     "local:make": "electron-forge make",
     "local:publish": "electron-forge publish",
