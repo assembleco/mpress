@@ -23,7 +23,7 @@ module.exports = {
       "os": require.resolve("os-browserify"),
       "process": require.resolve("process/browser"),
       "buffer": require.resolve("buffer/"),
-      "canvas": require.resolve("canvas"),
+      "canvas": require.resolve("@assembleco/canvas"),
       "perf_hooks": false,
       "fs": false,
       "child_process": false,
