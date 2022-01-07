@@ -10,7 +10,8 @@ import { schema } from "prosemirror-schema-basic"
 import { CodeModel, CodeDisplay } from "./code"
 import { ProseModel, ProseDisplay } from "./prose"
 import { Node } from "prosemirror-model"
-import { parseHTML } from "linkedom"
+
+import { parseString } from "xml2js"
 
 class Playground extends React.Component {
   state = {
@@ -168,8 +169,10 @@ class Playground extends React.Component {
 
   parse_xml_json(xml) {
     console.log(xml)
-    var model = parseHTML(xml)
-    console.log(model.document.querySelector("section").textContent);
+    parseString(xml, (error, response) => {
+      console.log(error)
+      console.dir(response);
+    })
 
     this.setState({ code:
       {

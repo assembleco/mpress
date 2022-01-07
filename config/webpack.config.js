@@ -294,8 +294,8 @@ module.exports = function (webpackEnv) {
       // Some libraries import Node modules but don't use them in the browser.
       // Tell webpack to provide empty mocks for them so importing them works.
       fallback: {
+        timers: false,
         perf_hooks: false,
-        canvas: require.resolve('canvas'),
         module: false,
         dgram: false,
         dns: 'mock',
