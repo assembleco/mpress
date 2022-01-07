@@ -295,7 +295,7 @@ module.exports = function (webpackEnv) {
       // Tell webpack to provide empty mocks for them so importing them works.
       fallback: {
         perf_hooks: false,
-        canvas: require.resolve('canvas'),
+        canvas: require.resolve('@assembleco/canvas'),
         module: false,
         dgram: false,
         dns: 'mock',
