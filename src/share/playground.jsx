@@ -37,6 +37,7 @@ class Playground extends React.Component {
       }
     },
     errors: [],
+    xml: null,
   }
 
   playgroundModel = null
@@ -101,6 +102,7 @@ class Playground extends React.Component {
 
   onLoadXML() {
     import("./BILLS-117hr2364rh.xml").then(module => {
+      this.setState({ xml: module.default })
       this.parse_xml_json(module.default)
     })
   }
@@ -223,6 +225,15 @@ class Playground extends React.Component {
         >
           Change display: code / prose
         </button>
+
+        {this.state.xml &&
+          <div>
+            <h3>Original USLM</h3>
+            <pre><code>
+            {this.state.xml}
+            </code></pre>
+          </div>
+        }
       </>
     )
   }

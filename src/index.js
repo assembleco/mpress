@@ -9,6 +9,7 @@ ReactDOM.render(
       background: '#a0a0b0',
       height: '100vh',
       width: '100vw',
+      overflowY: 'scroll',
     }} >
       <Playground address={null} />
     </div>
