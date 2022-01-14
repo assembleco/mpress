@@ -16,7 +16,26 @@ import parseXML from "@rgrove/parse-xml"
 class Playground extends React.Component {
   state = {
     display: 'prose',
-    code: "'hello'",
+    code: {
+      "doc": {
+        "type": "doc",
+        "content": [{
+          "type": "paragraph",
+          // "attrs": {
+          //   "align": "left"
+          // },
+          "content": [{
+            "type": "text",
+            "text": "'hello'.",
+          }]
+        }]
+      },
+      "selection": {
+        "type": "text",
+        "anchor": 16,
+        "head": 16
+      }
+    },
     errors: [],
   }
 
@@ -31,10 +50,12 @@ class Playground extends React.Component {
     this.changeDisplay = this.changeDisplay.bind(this)
     this.reloadDisplayOnCodeChange = this.reloadDisplayOnCodeChange.bind(this)
     this.grabCode()
+  }
 
+  componentDidMount() {
     if(this.state.display === 'code') {
       this.playgroundModel = CodeModel.create({
-        doc: this.state.code,
+        doc: JSON.stringify(this.state.code, null, 2),
         extensions: [
           javascript({ config: { jsx: true } }),
           lineNumbers(),
@@ -42,52 +63,22 @@ class Playground extends React.Component {
           keymap.of(defaultKeymap)
         ]
       })
+
+      this.playgroundDisplay =
+        new CodeDisplay({
+          state: this.playgroundModel,
+          parent: this.playgroundNode.current,
+        })
     } else {
-      let content = {
-        "doc": {
-          "type": "doc",
-          "content": [{
-            "type": "paragraph",
-            "attrs": {
-              "align": "left"
-            },
-            "content": [{
-              "type": "text",
-              "text": this.state.code
-            }]
-          }]
-        },
-        "selection": {
-          "type": "text",
-          "anchor": 16,
-          "head": 16
-        }
-      }
+      let contentNode = Node.fromJSON(schema, this.state.code.doc)
+      this.playgroundModel = ProseModel.create({ schema, doc: contentNode })
 
-      let contentNode = Node.fromJSON(schema, content.doc)
-
-      this.playgroundModel = ProseModel.create({
-        schema,
-        doc: contentNode,
-      })
+      this.playgroundDisplay =
+        new ProseDisplay(
+          this.playgroundNode.current,
+          { state: this.playgroundModel },
+        )
     }
-  }
-
-  componentDidMount() {
-    this.playgroundDisplay = (
-      this.state.display === 'code'
-      ?
-      new CodeDisplay({
-        state: this.playgroundModel,
-        parent: this.playgroundNode.current,
-      })
-
-      :
-      new ProseDisplay(
-        this.playgroundNode.current,
-        { state: this.playgroundModel },
-      )
-    )
 
     this.reloadDisplayOnCodeChange()
   }
@@ -115,15 +106,29 @@ class Playground extends React.Component {
   }
 
   reloadDisplayOnCodeChange() {
+    var change = null
+
     if(this.state.display === 'code') {
-      var change = this.playgroundModel.update({changes: {
+      change = this.playgroundModel.update({changes: {
         from: 0,
         to: this.playgroundModel.doc.length,
         insert: this.state.code,
       }})
 
       if(this.playgroundDisplay)
-      this.playgroundDisplay.dispatch(change)
+        this.playgroundDisplay.dispatch(change)
+    } else {
+      this.playgroundDisplay.destroy()
+
+      this.playgroundModel = ProseModel.create({
+        schema,
+        doc: Node.fromJSON(schema, this.state.code.doc),
+      })
+
+      this.playgroundDisplay = new ProseDisplay(
+        this.playgroundNode.current,
+        { state: this.playgroundModel },
+      )
     }
   }
 
@@ -132,6 +137,8 @@ class Playground extends React.Component {
     this.setState({ display: this.state.display === 'code' ? 'prose' : 'code' })
 
     if(originalDisplay === 'prose') {
+      this.playgroundDisplay.destroy()
+
       this.playgroundModel = CodeModel.create({
         doc: JSON.stringify(this.state.code, null, 2),
         extensions: [
@@ -142,7 +149,6 @@ class Playground extends React.Component {
         ]
       })
 
-      this.playgroundDisplay.destroy()
       this.playgroundDisplay = new CodeDisplay({
         state: this.playgroundModel,
         parent: this.playgroundNode.current,
@@ -150,7 +156,7 @@ class Playground extends React.Component {
     } else {
       this.playgroundModel = ProseModel.create({
         schema,
-        doc: Node.fromJSON(schema, JSON.parse(this.state.code)),
+        doc: Node.fromJSON(schema, this.state.code.doc),
       })
 
       this.playgroundDisplay.destroy()
@@ -182,7 +188,7 @@ class Playground extends React.Component {
                   {
                     type: 'text',
                     text: `
-                    class: ${phrase(drill(section, 'enum'))}
+                    enum: ${phrase(drill(section, 'enum'))}
                     header: ${phrase(drill(section, "header"))}
                     body: ${phrase(drill(section, "text"))}
                     `,
