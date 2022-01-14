@@ -294,16 +294,17 @@ module.exports = function (webpackEnv) {
       // Some libraries import Node modules but don't use them in the browser.
       // Tell webpack to provide empty mocks for them so importing them works.
       fallback: {
-        timers: false,
-        perf_hooks: false,
-        module: false,
+        child_process: false,
         dgram: false,
         dns: 'mock',
         fs: false,
         http2: false,
+        module: false,
         net: false,
+        perf_hooks: false,
+        stream: require.resolve('stream-browserify'),
+        timers: false,
         tls: false,
-        child_process: false,
       },
       // This allows you to set a fallback for where webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
