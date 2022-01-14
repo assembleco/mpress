@@ -119,6 +119,7 @@
     "@codemirror/lang-javascript": "^0.19.3",
     "@codemirror/view": "^0.19.37",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
+    "@rgrove/parse-xml": "^3.0.0",
     "@svgr/webpack": "^5.5.0",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
@@ -181,8 +182,7 @@
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",
-    "workbox-webpack-plugin": "^6.4.1",
-    "xml2js": "^0.4.23"
+    "workbox-webpack-plugin": "^6.4.1"
   },
   "jest": {
     "roots": [

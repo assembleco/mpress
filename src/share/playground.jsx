@@ -11,7 +11,7 @@ import { CodeModel, CodeDisplay } from "./code"
 import { ProseModel, ProseDisplay } from "./prose"
 import { Node } from "prosemirror-model"
 
-import { parseString } from "xml2js"
+import parseXML from "@rgrove/parse-xml"
 
 class Playground extends React.Component {
   state = {
@@ -132,10 +132,6 @@ class Playground extends React.Component {
     this.setState({ display: this.state.display === 'code' ? 'prose' : 'code' })
 
     if(originalDisplay === 'prose') {
-      this.setState({
-        code: JSON.stringify(this.playgroundModel.doc.toJSON(), null, 2),
-      })
-
       this.playgroundModel = CodeModel.create({
         doc: JSON.stringify(this.state.code, null, 2),
         extensions: [
@@ -168,29 +164,41 @@ class Playground extends React.Component {
   }
 
   parse_xml_json(xml) {
-    console.log(xml)
-    parseString(xml, (error, response) => {
-      console.log(error)
-      console.dir(response);
-    })
+    var parsed = parseXML(xml)
 
-    this.setState({ code:
-      {
-        "doc": {
-          "type": "doc",
-          "content": [{
-            "type": "paragraph",
-            "attrs": {
-              "align": "left"
-            },
-            "content": [{
-              "type": "text",
-              "text": "xml parser.",
-            }]
-          }]
-        },
+    var record = {
+      doc: {
+        type: 'doc',
+        content:
+          parsed
+          .children.filter(c => c.name === "bill")[0]
+          .children.filter(c => c.name === "legis-body")[0]
+          .children.filter(c => c.name === "section")
+          .map(section => {
+            try {
+              return {
+                type: 'paragraph',
+                content: [
+                  {
+                    type: 'text',
+                    text: `
+                    class: ${phrase(drill(section, 'enum'))}
+                    header: ${phrase(drill(section, "header"))}
+                    body: ${phrase(drill(section, "text"))}
+                    `,
+                  }
+                ]
+              }
+            } catch(e) {
+              console.log(e)
+              console.dir(section)
+            }
+        })
       }
-    })
+    }
+
+    this.setState({ code: record })
+
     setTimeout(this.reloadDisplayOnCodeChange, 250)
   }
 
@@ -233,6 +241,18 @@ class Playground extends React.Component {
       </>
     )
   }
+}
+
+function drill(node, name) {
+  var responses = node.children.filter(c => c.name === name)
+  if(responses.length === 0)
+    return { children: [] }
+  else
+    return responses[0]
+}
+
+function phrase(node) {
+  return node.children.map(c => c.text).join()
 }
 
 export default observer(Playground)
