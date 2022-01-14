@@ -109,11 +109,22 @@ class Playground extends React.Component {
     var change = null
 
     if(this.state.display === 'code') {
-      change = this.playgroundModel.update({changes: {
-        from: 0,
-        to: this.playgroundModel.doc.length,
-        insert: this.state.code,
-      }})
+      this.playgroundDisplay.destroy()
+
+      this.playgroundModel = CodeModel.create({
+        doc: JSON.stringify(this.state.code, null, 2),
+        extensions: [
+          javascript({ config: { jsx: true } }),
+          lineNumbers(),
+          basicSetup,
+          keymap.of(defaultKeymap)
+        ]
+      })
+
+      this.playgroundDisplay = new CodeDisplay({
+        state: this.playgroundModel,
+        parent: this.playgroundNode.current,
+      })
 
       if(this.playgroundDisplay)
         this.playgroundDisplay.dispatch(change)
@@ -133,39 +144,7 @@ class Playground extends React.Component {
   }
 
   changeDisplay() {
-    var originalDisplay = this.state.display
     this.setState({ display: this.state.display === 'code' ? 'prose' : 'code' })
-
-    if(originalDisplay === 'prose') {
-      this.playgroundDisplay.destroy()
-
-      this.playgroundModel = CodeModel.create({
-        doc: JSON.stringify(this.state.code, null, 2),
-        extensions: [
-          javascript({ config: { jsx: true } }),
-          lineNumbers(),
-          basicSetup,
-          keymap.of(defaultKeymap)
-        ]
-      })
-
-      this.playgroundDisplay = new CodeDisplay({
-        state: this.playgroundModel,
-        parent: this.playgroundNode.current,
-      })
-    } else {
-      this.playgroundModel = ProseModel.create({
-        schema,
-        doc: Node.fromJSON(schema, this.state.code.doc),
-      })
-
-      this.playgroundDisplay.destroy()
-      this.playgroundDisplay = new ProseDisplay(
-        this.playgroundNode.current,
-        { state: this.playgroundModel },
-      )
-    }
-
     setTimeout(this.reloadDisplayOnCodeChange, 250)
   }
 
