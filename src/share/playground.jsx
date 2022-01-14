@@ -145,7 +145,7 @@ class Playground extends React.Component {
 
   changeDisplay() {
     this.setState({ display: this.state.display === 'code' ? 'prose' : 'code' })
-    setTimeout(this.reloadDisplayOnCodeChange, 250)
+    this.reloadDisplayOnCodeChange()
   }
 
   parse_xml_json(xml) {
