@@ -2,58 +2,88 @@
 <?xml-stylesheet type="text/xsl" href="billres.xsl"?>
 <!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill.dtd//EN" "bill.dtd">
 <bill bill-stage="Reported-in-House" dms-id="H3870FC6F27AF4A3E8E2DFA861DA116C6" public-private="public" key="H" bill-type="olc"> 
-<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dublinCore>
-<dc:title>117 HR 2364 RH: Synthetic Opioid Danger Awareness Act</dc:title>
-<dc:publisher>U.S. House of Representatives</dc:publisher>
-<dc:date>2021-11-30</dc:date>
-<dc:format>text/xml</dc:format>
-<dc:language>EN</dc:language>
-<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
-</dublinCore>
-</metadata>
-<form>
-<distribution-code display="yes">IB</distribution-code> 
-<calendar display="yes">Union Calendar No. 131</calendar> 
-<congress display="yes">117th CONGRESS</congress><session display="yes">1st Session</session> 
-<legis-num display="yes">H. R. 2364</legis-num> 
-<associated-doc role="report" display="yes">[Report No. 117–181]</associated-doc> 
-<current-chamber>IN THE HOUSE OF REPRESENTATIVES</current-chamber> 
-<action display="yes"> 
-<action-date date="20210405">April 5, 2021</action-date> 
-<action-desc><sponsor name-id="K000394">Mr. Kim of New Jersey</sponsor> (for himself and <cosponsor name-id="P000614">Mr. Pappas</cosponsor>) introduced the following bill; which was referred to the <committee-name committee-id="HIF00">Committee on Energy and Commerce</committee-name></action-desc> 
-</action> 
-<action display="yes"> 
-<action-date date="20211130">November 30, 2021</action-date> 
-<action-desc>Additional sponsor: <cosponsor name-id="R000599">Mr. Ruiz</cosponsor></action-desc> 
-</action> 
-<action display="yes"> 
-<action-date date="20211130">November 30, 2021</action-date> 
-<action-desc>Reported with an amendment; committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc> 
-<action-instruction>Strike out all after the enacting clause and insert the part printed in italic</action-instruction> 
-<action-instruction>For text of introduced bill, see copy of bill as introduced on April 5, 2021</action-instruction> 
-</action> 
-<action>
-<action-desc><pagebreak/></action-desc>
-</action>
-<legis-type>A BILL</legis-type> 
-<official-title display="yes">To amend title III of the Public Health Service Act to direct the Secretary, acting through the Director of the Centers for Disease Control and Prevention, to provide for a public education campaign to raise public awareness of synthetic opioids.<pagebreak/></official-title> 
-</form> 
-<legis-body display-enacting-clause="yes-display-enacting-clause" changed="added" style="OLC" committee-id="HIF00" reported-display-style="italic" id="HBFC5DABAD7B94FE4A5AC32F6A8ECE256"> 
-<section id="H6CF1715DAB924EB98951368678951658" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Synthetic Opioid Danger Awareness Act</short-title></quote>.</text></section> <section id="H33268BC3F1B74A5AB8449027F1F36283"><enum>2.</enum><header>Synthetic Opioids Public Awareness Campaign</header><text display-inline="no-display-inline">Part B of title III of the Public Health Service Act is amended by inserting after section 317U (<external-xref legal-doc="usc" parsable-cite="usc/42/247b-23">42 U.S.C. 247b–23</external-xref>) the following new section:</text> 
-<quoted-block display-inline="no-display-inline" id="HAAD9C97065F649158558AE1832F9BCE7" style="OLC"> 
-<section id="H799268976FAD4EF08470AB3688F4B46D"><enum>317V.</enum><header>Synthetic Opioids Public Awareness Campaign</header> 
-<subsection id="H4C8901FA216D44EAAC317F680DEEB44A"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Not later than one year after the date of the enactment of this section, the Secretary shall provide for the planning and implementation of a public education campaign to raise public awareness of synthetic opioids (including fentanyl and its analogues). Such campaign shall include the dissemination of information that—</text> <paragraph id="H5211B86C73964650969A2588D8F108A6"><enum>(1)</enum><text display-inline="yes-display-inline">promotes awareness about the potency and dangers of fentanyl and its analogues and other synthetic opioids;</text></paragraph> 
-<paragraph id="H5F07372E8C9248B2B8FCDEA9E1CD9FB2"><enum>(2)</enum><text display-inline="yes-display-inline">explains services provided by the Substance Abuse and Mental Health Services Administration and the Centers for Disease Control and Prevention (and any entity providing such services under a contract entered into with such agencies) with respect to the misuse of opioids, particularly as such services relate to the provision of alternative, non-opioid pain management treatments; and</text></paragraph> <paragraph id="H68F639698D294D68AEBBBD94376B67D1"><enum>(3)</enum><text>relates generally to opioid use and pain management.</text></paragraph></subsection> 
-<subsection id="H3B43AD095AA54CA687723A823FD8DCF4"><enum>(b)</enum><header>Use of media</header><text display-inline="yes-display-inline">The campaign under subsection (a) may be implemented through the use of television, radio, internet, in-person public communications, and other commercial marketing venues and may be targeted to specific age groups.</text></subsection> <subsection id="H4FB6E589074D42A9886A4560C961F916"><enum>(c)</enum><header>Consideration of report findings</header><text display-inline="yes-display-inline">In planning and implementing the public education campaign under subsection (a), the Secretary shall take into consideration the findings of the report required under section 7001 of the SUPPORT for Patients and Communities Act (<external-xref legal-doc="public-law" parsable-cite="pl/115/271">Public Law 115–271</external-xref>).</text></subsection> 
-<subsection id="H6341AB9BDF064D7EA1B792D662225DF2"><enum>(d)</enum><header>Consultation</header><text display-inline="yes-display-inline">In coordinating the campaign under subsection (a), the Secretary shall consult with the Assistant Secretary for Mental Health and Substance Use to provide ongoing advice on the effectiveness of information disseminated through the campaign<italic></italic>.</text></subsection> <subsection id="HDBA5E79323B94FAC8B241E5064FD2296"><enum>(e)</enum><header>Requirement of Campaign</header><text display-inline="yes-display-inline">The campaign implemented under subsection (a) shall not be duplicative of any other Federal efforts relating to eliminating the misuse of opioids.</text></subsection> 
-<subsection id="H95B89B9F37C5467BA28005026B50FDA6"><enum>(f)</enum><header>Evaluation</header> 
-<paragraph id="H04DB2314934D4FB3ABD260CE5179607F"><enum>(1)</enum><header>In general</header><text>The Secretary shall ensure that the campaign implemented under subsection (a) is subject to an independent evaluation, beginning 2 years after the date of the enactment of this section, and every 2 years thereafter.</text></paragraph> <paragraph id="H99C974233CF548359A8829737DA29B6E"><enum>(2)</enum><header>Measures and benchmarks</header><text display-inline="yes-display-inline">For purposes of an evaluation conducted pursuant to paragraph (1), the Secretary shall—</text> 
-<subparagraph id="HDA7AB7D5711C44758F0CA61107A588DF"><enum>(A)</enum><text>establish baseline measures and bench­marks to quantitatively evaluate the impact of the campaign under this section; and</text></subparagraph> <subparagraph id="HCB950B92D2AF493CB040296034DD1EFE"><enum>(B)</enum><text>conduct qualitative assessments regarding the effectiveness of strategies employed under this section.</text></subparagraph></paragraph></subsection> 
-<subsection id="HB89CCEF07838437389749F384FC254EC"><enum>(g)</enum><header>Report</header><text display-inline="yes-display-inline">The Secretary shall, beginning 2 years after the date of the enactment of this section, and every 2 years thereafter, submit to Congress a report on the effectiveness of the campaign implemented under subsection (a) towards meeting the measures and benchmarks established under subsection (e)(2).</text></subsection> <subsection id="H29D0199133544FB080D58D11A155754C"><enum>(h)</enum><header>Dissemination of Information Through Providers</header><text display-inline="yes-display-inline">The Secretary shall develop and implement a plan for the dissemination of information related to synthetic opioids, to health care providers who participate in Federal programs, including programs administered by the Department of Health and Human Services, the Indian Health Service, the Department of Veterans Affairs, the Department of Defense, and the Health Resources and Services Administration, the Medicare program under title XVIII of the Social Security Act, and the Medicaid program under title XIX of such Act.</text></subsection></section><after-quoted-block>.</after-quoted-block></quoted-block></section> 
-<section id="HAEA1793FBD134A72A95B947673675435"><enum>3.</enum><header>Training guide and outreach on synthetic opioid exposure prevention</header> 
-<subsection id="H4FB16DE80496452FA118DE01C3C9FBF7"><enum>(a)</enum><header>Training guide</header><text display-inline="yes-display-inline">Not later than 18 months after the date of the enactment of this Act, the Secretary of Health and Human Services shall design, publish, and make publicly available on the internet website of the Institute, a training guide and webinar for first responders and other individuals who also may be at high risk of exposure to synthetic opioids that details measures to prevent that exposure.</text></subsection> <subsection id="HA0C724989966448D970DD8E3AE6C0B97"><enum>(b)</enum><header>Outreach</header><text display-inline="yes-display-inline">Not later than 18 months after the date of the enactment of this Act, the Secretary of Health and Human Services shall also conduct outreach about the availability of the training guide and webinar published under subsection (a) to—</text> 
-<paragraph id="H267E9B7889644118B35961C5C0901441"><enum>(1)</enum><text>police and fire managements;</text></paragraph> <paragraph id="H23E9A505F7BD48D585F33F7068158379"><enum>(2)</enum><text>sheriff deputies in city and county jails;</text></paragraph> 
-<paragraph id="H0896867487A34BCFA7C05882ED9F5C41"><enum>(3)</enum><text>ambulance transport and hospital emergency room personnel;</text></paragraph> <paragraph id="H9AD8CF7DA9174AB8A241BD7C031D5287"><enum>(4)</enum><text>clinicians; and</text></paragraph> 
-<paragraph id="HD7B789802ACA407D8315A94FB21EE1A1"><enum>(5)</enum><text display-inline="yes-display-inline">other high-risk occupations, as identified by the Assistant Secretary for Mental Health and Substance Use.</text></paragraph></subsection></section> </legis-body> <endorsement display="yes"> <action-date>November 30, 2021</action-date> <action-desc>Reported with an amendment; committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc></endorsement> </bill> 
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dublinCore>
+      <dc:title>117 HR 2364 RH: Synthetic Opioid Danger Awareness Act</dc:title>
+      <dc:publisher>U.S. House of Representatives</dc:publisher>
+      <dc:date>2021-11-30</dc:date>
+      <dc:format>text/xml</dc:format>
+      <dc:language>EN</dc:language>
+      <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    </dublinCore>
+  </metadata>
+  <form>
+    <distribution-code display="yes">IB</distribution-code> 
+    <calendar display="yes">Union Calendar No. 131</calendar> 
+    <congress display="yes">117th CONGRESS</congress><session display="yes">1st Session</session> 
+    <legis-num display="yes">H. R. 2364</legis-num> 
+    <associated-doc role="report" display="yes">[Report No. 117–181]</associated-doc> 
+    <current-chamber>IN THE HOUSE OF REPRESENTATIVES</current-chamber> 
+    <action display="yes"> 
+      <action-date date="20210405">April 5, 2021</action-date> 
+      <action-desc><sponsor name-id="K000394">Mr. Kim of New Jersey</sponsor> (for himself and <cosponsor name-id="P000614">Mr. Pappas</cosponsor>) introduced the following bill; which was referred to the <committee-name committee-id="HIF00">Committee on Energy and Commerce</committee-name></action-desc> 
+    </action> 
+    <action display="yes"> 
+      <action-date date="20211130">November 30, 2021</action-date> 
+      <action-desc>Additional sponsor: <cosponsor name-id="R000599">Mr. Ruiz</cosponsor></action-desc> 
+    </action> 
+    <action display="yes"> 
+      <action-date date="20211130">November 30, 2021</action-date> 
+      <action-desc>Reported with an amendment; committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc> 
+      <action-instruction>Strike out all after the enacting clause and insert the part printed in italic</action-instruction> 
+      <action-instruction>For text of introduced bill, see copy of bill as introduced on April 5, 2021</action-instruction> 
+    </action> 
+    <action>
+      <action-desc><pagebreak/></action-desc>
+    </action>
+    <legis-type>A BILL</legis-type> 
+    <official-title display="yes">To amend title III of the Public Health Service Act to direct the Secretary, acting through the Director of the Centers for Disease Control and Prevention, to provide for a public education campaign to raise public awareness of synthetic opioids.<pagebreak/></official-title> 
+  </form> 
+  <legis-body display-enacting-clause="yes-display-enacting-clause" changed="added" style="OLC" committee-id="HIF00" reported-display-style="italic" id="HBFC5DABAD7B94FE4A5AC32F6A8ECE256"> 
+    <section id="H6CF1715DAB924EB98951368678951658" section-type="section-one">
+      <enum>1.</enum>
+      <header>Short title</header>
+      <text display-inline="no-display-inline">This Act may be cited as the
+      <quote>
+        <short-title>Synthetic Opioid Danger Awareness Act</short-title>
+      </quote>
+      .
+      </text>
+    </section>
+
+    <section id="H33268BC3F1B74A5AB8449027F1F36283"><enum>2.</enum><header>Synthetic Opioids Public Awareness Campaign</header><text display-inline="no-display-inline">Part B of title III of the Public Health Service Act is amended by inserting after section 317U (<external-xref legal-doc="usc" parsable-cite="usc/42/247b-23">42 U.S.C. 247b–23</external-xref>) the following new section:</text> 
+      <quoted-block display-inline="no-display-inline" id="HAAD9C97065F649158558AE1832F9BCE7" style="OLC"> 
+        <section id="H799268976FAD4EF08470AB3688F4B46D"><enum>317V.</enum><header>Synthetic Opioids Public Awareness Campaign</header>
+
+          <subsection id="H4C8901FA216D44EAAC317F680DEEB44A"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Not later than one year after the date of the enactment of this section, the Secretary shall provide for the planning and implementation of a public education campaign to raise public awareness of synthetic opioids (including fentanyl and its analogues). Such campaign shall include the dissemination of information that—</text> <paragraph id="H5211B86C73964650969A2588D8F108A6"><enum>(1)</enum><text display-inline="yes-display-inline">promotes awareness about the potency and dangers of fentanyl and its analogues and other synthetic opioids;</text></paragraph> 
+            <paragraph id="H5F07372E8C9248B2B8FCDEA9E1CD9FB2"><enum>(2)</enum><text display-inline="yes-display-inline">explains services provided by the Substance Abuse and Mental Health Services Administration and the Centers for Disease Control and Prevention (and any entity providing such services under a contract entered into with such agencies) with respect to the misuse of opioids, particularly as such services relate to the provision of alternative, non-opioid pain management treatments; and</text></paragraph> <paragraph id="H68F639698D294D68AEBBBD94376B67D1"><enum>(3)</enum><text>relates generally to opioid use and pain management.</text></paragraph></subsection> 
+          <subsection id="H3B43AD095AA54CA687723A823FD8DCF4"><enum>(b)</enum><header>Use of media</header><text display-inline="yes-display-inline">The campaign under subsection (a) may be implemented through the use of television, radio, internet, in-person public communications, and other commercial marketing venues and may be targeted to specific age groups.</text></subsection> <subsection id="H4FB6E589074D42A9886A4560C961F916"><enum>(c)</enum><header>Consideration of report findings</header><text display-inline="yes-display-inline">In planning and implementing the public education campaign under subsection (a), the Secretary shall take into consideration the findings of the report required under section 7001 of the SUPPORT for Patients and Communities Act (<external-xref legal-doc="public-law" parsable-cite="pl/115/271">Public Law 115–271</external-xref>).</text></subsection> 
+          <subsection id="H6341AB9BDF064D7EA1B792D662225DF2"><enum>(d)</enum><header>Consultation</header><text display-inline="yes-display-inline">In coordinating the campaign under subsection (a), the Secretary shall consult with the Assistant Secretary for Mental Health and Substance Use to provide ongoing advice on the effectiveness of information disseminated through the campaign<italic></italic>.</text></subsection> <subsection id="HDBA5E79323B94FAC8B241E5064FD2296"><enum>(e)</enum><header>Requirement of Campaign</header><text display-inline="yes-display-inline">The campaign implemented under subsection (a) shall not be duplicative of any other Federal efforts relating to eliminating the misuse of opioids.</text></subsection> 
+
+          <subsection id="H95B89B9F37C5467BA28005026B50FDA6"><enum>(f)</enum><header>Evaluation</header> 
+            <paragraph id="H04DB2314934D4FB3ABD260CE5179607F"><enum>(1)</enum><header>In general</header>
+              <text>The Secretary shall ensure that the campaign implemented under subsection (a) is subject to an independent evaluation, beginning 2 years after the date of the enactment of this section, and every 2 years thereafter.</text>
+            </paragraph>
+            <paragraph id="H99C974233CF548359A8829737DA29B6E"><enum>(2)</enum><header>Measures and benchmarks</header><text display-inline="yes-display-inline">For purposes of an evaluation conducted pursuant to paragraph (1), the Secretary shall—</text> 
+              <subparagraph id="HDA7AB7D5711C44758F0CA61107A588DF"><enum>(A)</enum>
+                <text>establish baseline measures and bench­marks to quantitatively evaluate the impact of the campaign under this section; and</text>
+              </subparagraph>
+              <subparagraph id="HCB950B92D2AF493CB040296034DD1EFE"><enum>(B)</enum><text>conduct qualitative assessments regarding the effectiveness of strategies employed under this section.</text></subparagraph>
+            </paragraph>
+          </subsection> 
+
+          <subsection id="HB89CCEF07838437389749F384FC254EC"><enum>(g)</enum><header>Report</header><text display-inline="yes-display-inline">The Secretary shall, beginning 2 years after the date of the enactment of this section, and every 2 years thereafter, submit to Congress a report on the effectiveness of the campaign implemented under subsection (a) towards meeting the measures and benchmarks established under subsection (e)(2).</text></subsection> <subsection id="H29D0199133544FB080D58D11A155754C"><enum>(h)</enum><header>Dissemination of Information Through Providers</header><text display-inline="yes-display-inline">The Secretary shall develop and implement a plan for the dissemination of information related to synthetic opioids, to health care providers who participate in Federal programs, including programs administered by the Department of Health and Human Services, the Indian Health Service, the Department of Veterans Affairs, the Department of Defense, and the Health Resources and Services Administration, the Medicare program under title XVIII of the Social Security Act, and the Medicaid program under title XIX of such Act.</text></subsection></section><after-quoted-block>.</after-quoted-block></quoted-block></section> 
+    <section id="HAEA1793FBD134A72A95B947673675435"><enum>3.</enum><header>Training guide and outreach on synthetic opioid exposure prevention</header> 
+      <subsection id="H4FB16DE80496452FA118DE01C3C9FBF7"><enum>(a)</enum><header>Training guide</header><text display-inline="yes-display-inline">Not later than 18 months after the date of the enactment of this Act, the Secretary of Health and Human Services shall design, publish, and make publicly available on the internet website of the Institute, a training guide and webinar for first responders and other individuals who also may be at high risk of exposure to synthetic opioids that details measures to prevent that exposure.</text></subsection> <subsection id="HA0C724989966448D970DD8E3AE6C0B97"><enum>(b)</enum><header>Outreach</header><text display-inline="yes-display-inline">Not later than 18 months after the date of the enactment of this Act, the Secretary of Health and Human Services shall also conduct outreach about the availability of the training guide and webinar published under subsection (a) to—</text> 
+        <paragraph id="H267E9B7889644118B35961C5C0901441"><enum>(1)</enum><text>police and fire managements;</text></paragraph> <paragraph id="H23E9A505F7BD48D585F33F7068158379"><enum>(2)</enum><text>sheriff deputies in city and county jails;</text></paragraph> 
+        <paragraph id="H0896867487A34BCFA7C05882ED9F5C41"><enum>(3)</enum><text>ambulance transport and hospital emergency room personnel;</text></paragraph> <paragraph id="H9AD8CF7DA9174AB8A241BD7C031D5287"><enum>(4)</enum><text>clinicians; and</text></paragraph> 
+        <paragraph id="HD7B789802ACA407D8315A94FB21EE1A1"><enum>(5)</enum><text display-inline="yes-display-inline">other high-risk occupations, as identified by the Assistant Secretary for Mental Health and Substance Use.</text></paragraph>
+      </subsection>
+    </section>
+  </legis-body>
+  <endorsement display="yes">
+    <action-date>November 30, 2021</action-date>
+    <action-desc>Reported with an amendment; committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc>
+  </endorsement>
+</bill> 
 
