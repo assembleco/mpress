@@ -6,7 +6,6 @@ import { lineNumbers } from "@codemirror/gutter"
 import { basicSetup } from "@codemirror/basic-setup"
 import { defaultKeymap } from "@codemirror/commands"
 import { javascript } from "@codemirror/lang-javascript"
-import { schema } from "prosemirror-schema-basic"
 import { CodeModel, CodeDisplay } from "./code"
 import { ProseModel, ProseDisplay } from "./prose"
 import { Node } from "prosemirror-model"
@@ -140,8 +139,8 @@ class Playground extends React.Component {
       this.playgroundDisplay.destroy()
 
       this.playgroundModel = ProseModel.create({
-        schema,
-        doc: Node.fromJSON(schema, this.state.code.doc),
+        schema: bill_dtd,
+        doc: Node.fromJSON(bill_dtd, this.state.code.doc),
       })
 
       this.playgroundDisplay = new ProseDisplay(

@@ -2,37 +2,42 @@ import parseXML from "@rgrove/parse-xml"
 
 var parse = (xml, callback) => {
   var parsed = parseXML(xml)
+  process_hierarchy(parsed, (response) => {
+    callback({
+      doc: {
+        type: 'doc',
+        content: response
+      }
+    })
+  })
+}
 
-  var record = {
-    doc: {
-      type: 'doc',
-      content:
-        parsed
-        .children.filter(c => c.name === "bill")[0]
-        .children.filter(c => c.name === "legis-body")[0]
-        .children.filter(c => c.name === "section")
-        .map(section => {
-          try {
-            return {
-              type: 'paragraph',
-              content: [
-                {
-                  type: 'text',
-                  text: `
+var process_hierarchy = (node, callback) => {
+  var record =
+    node
+    .children.filter(c => c.name === "bill")[0]
+    .children.filter(c => c.name === "legis-body")[0]
+    .children.filter(c => c.name === "section")
+    .map(section => {
+      try {
+        return {
+          type: 'section',
+          content: [
+            {
+              type: 'text',
+              text: `
                   enum: ${phrase(drill(section, 'enum'))}
                   header: ${phrase(drill(section, "header"))}
                   body: ${phrase(drill(section, "text"))}
                   `,
-                }
-              ]
             }
-          } catch(e) {
-            console.log(e)
-            console.dir(section)
-          }
-      })
-    }
-  }
+          ]
+        }
+      } catch(e) {
+        console.log(e)
+        console.dir(section)
+      }
+    })
 
   callback(record)
 }
