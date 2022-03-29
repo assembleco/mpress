@@ -4,16 +4,12 @@ var parse = (xml, callback) => {
   var parsed = parseXML(xml)
 
   process_hierarchy(parsed, (response) => {
-    // console.log(JSON.stringify(response, null, 2))
     callback({ doc: { type: 'doc', content: response } })
   })
 }
 
 var process_hierarchy = (node, callback) => {
-  if(node.name === 'text') console.dir(node)
-
   if(node.children) {
-
     var record = node.children.map(child => {
       if(child instanceof XmlText) return {
         type: 'text',
