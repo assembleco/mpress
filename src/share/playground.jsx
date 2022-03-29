@@ -11,7 +11,8 @@ import { CodeModel, CodeDisplay } from "./code"
 import { ProseModel, ProseDisplay } from "./prose"
 import { Node } from "prosemirror-model"
 
-import parseXML from "@rgrove/parse-xml"
+import { parse } from "./parse"
+import { bill_dtd } from "./schema"
 
 class Playground extends React.Component {
   state = {
@@ -71,8 +72,12 @@ class Playground extends React.Component {
           parent: this.playgroundNode.current,
         })
     } else {
-      let contentNode = Node.fromJSON(schema, this.state.code.doc)
-      this.playgroundModel = ProseModel.create({ schema, doc: contentNode })
+      let contentNode = Node.fromJSON(bill_dtd, this.state.code.doc)
+
+      this.playgroundModel = ProseModel.create({
+        schema: bill_dtd,
+        doc: contentNode,
+      })
 
       this.playgroundDisplay =
         new ProseDisplay(
@@ -82,6 +87,7 @@ class Playground extends React.Component {
     }
 
     this.reloadDisplayOnCodeChange()
+    this.onLoadXML()
   }
 
   componentDidUpdate(prev) {
@@ -103,7 +109,7 @@ class Playground extends React.Component {
   onLoadXML() {
     import("./BILLS-117hr2364rh.xml").then(module => {
       this.setState({ xml: module.default })
-      this.parse_xml_json(module.default)
+      this.parse_xml_as_json(module.default)
     })
   }
 
@@ -150,45 +156,12 @@ class Playground extends React.Component {
     this.reloadDisplayOnCodeChange()
   }
 
-  parse_xml_json(xml) {
-    var parsed = parseXML(xml)
-
-    var record = {
-      doc: {
-        type: 'doc',
-        content:
-          parsed
-          .children.filter(c => c.name === "bill")[0]
-          .children.filter(c => c.name === "legis-body")[0]
-          .children.filter(c => c.name === "section")
-          .map(section => {
-            try {
-              return {
-                type: 'paragraph',
-                content: [
-                  {
-                    type: 'text',
-                    text: `
-                    enum: ${phrase(drill(section, 'enum'))}
-                    header: ${phrase(drill(section, "header"))}
-                    body: ${phrase(drill(section, "text"))}
-                    `,
-                  }
-                ]
-              }
-            } catch(e) {
-              console.log(e)
-              console.dir(section)
-            }
-        })
-      }
-    }
-
-    this.setState({ code: record })
-
-    setTimeout(this.reloadDisplayOnCodeChange, 250)
+  parse_xml_as_json(xml, callback) {
+    parse(xml, response => {
+      this.setState({ code: response })
+      setTimeout(this.reloadDisplayOnCodeChange, 250)
+    })
   }
-
 
   render() {
     return (
@@ -237,18 +210,6 @@ class Playground extends React.Component {
       </>
     )
   }
-}
-
-function drill(node, name) {
-  var responses = node.children.filter(c => c.name === name)
-  if(responses.length === 0)
-    return { children: [] }
-  else
-    return responses[0]
-}
-
-function phrase(node) {
-  return node.children.map(c => c.text).join()
 }
 
 export default observer(Playground)
