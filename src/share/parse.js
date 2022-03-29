@@ -1,45 +1,40 @@
-import parseXML from "@rgrove/parse-xml"
+import parseXML, { XmlText} from "@rgrove/parse-xml"
 
 var parse = (xml, callback) => {
   var parsed = parseXML(xml)
+
   process_hierarchy(parsed, (response) => {
-    callback({
-      doc: {
-        type: 'doc',
-        content: response
-      }
-    })
+    // console.log(JSON.stringify(response, null, 2))
+    callback({ doc: { type: 'doc', content: response } })
   })
 }
 
 var process_hierarchy = (node, callback) => {
-  var record =
-    node
-    .children.filter(c => c.name === "bill")[0]
-    .children.filter(c => c.name === "legis-body")[0]
-    .children.filter(c => c.name === "section")
-    .map(section => {
-      try {
-        return {
-          type: 'section',
-          content: [
-            {
-              type: 'text',
-              text: `
-                  enum: ${phrase(drill(section, 'enum'))}
-                  header: ${phrase(drill(section, "header"))}
-                  body: ${phrase(drill(section, "text"))}
-                  `,
-            }
-          ]
-        }
-      } catch(e) {
-        console.log(e)
-        console.dir(section)
-      }
-    })
+  if(node.name === 'text') console.dir(node)
 
-  callback(record)
+  if(node.children) {
+
+    var record = node.children.map(child => {
+      if(child instanceof XmlText) return {
+        type: 'text',
+        text: child.text,
+      }
+
+      return process_hierarchy(child, grandchildren => {
+        if(child.name === 'dublinCore') return null
+        if(child.name === 'form') return null
+
+        if(child.name === 'text') child.name = 'text_model'
+
+        return {
+          type: child.name.replace(/-/g, '_').replace(/:/g, '_'),
+          content: grandchildren,
+        }
+      })
+    }).filter(x => x)
+
+    return callback(record)
+  }
 }
 
 function drill(node, name) {
